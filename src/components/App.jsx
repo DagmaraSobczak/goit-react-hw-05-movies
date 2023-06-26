@@ -6,15 +6,21 @@ const SharedLayout = lazy(() => import('./Shared Layout/Shared Layout'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 const Home = lazy(() => import('../pages/Home/Home'));
-const Movie Details = lazy(() => import('../pages/Movie Details/Movie Details'));
+const MovieDetails = lazy(() => import('../pages/Movie Details/Movie Details'));
 const Movies = lazy(() => import('../pages/Movies/Movies'));
+const GoBack = lazy(() => import('./Go Back/Go Back'));
 
-const App = () => {
+export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route path="some-path" element={<MyComponent />} />
-        {/* Inne trasy */}
+        <Route index elemnet={<Home />} />
+        <Route path="Movies" element={<Movies />} />
+        <Route path="Movie Details" element={<MovieDetails />}>
+          <Route path="Cast" element={<Cast />} />
+          <Route path="Reviews" element={<Reviews />} />
+          <Route path="Go Back" element={<GoBack />} />
+        </Route>
       </Route>
     </Routes>
   );
