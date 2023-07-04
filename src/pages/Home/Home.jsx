@@ -4,7 +4,7 @@ import css from './Home.module.css';
 import Api from 'components/Api';
 import Loader from 'components/Loader/Loader';
 
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -41,3 +41,4 @@ export const Home = () => {
     </>
   );
 };
+export default Home;

@@ -37,7 +37,6 @@ export const Cast = () => {
                   src={`https://image.tmdb.org/t/p/original${profile_path}`}
                   alt={`${name ? name : 'Actor'}`}
                   className={css.castImg}
-                  loading="lazy"
                 />
               ) : (
                 <p className={css.noPhoto}>No photo</p>
@@ -57,3 +56,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;

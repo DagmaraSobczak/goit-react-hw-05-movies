@@ -4,7 +4,7 @@ import Api from 'components/Api';
 import Loader from 'components/Loader/Loader';
 import { useParams } from 'react-router-dom';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
@@ -55,3 +55,4 @@ export const Reviews = () => {
     </>
   );
 };
+export default Reviews;

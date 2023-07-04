@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, useRef } from 'react';
-import css from './Movie Details.module.css';
+import css from './MovieDetails.module.css';
 import Api from 'components/Api';
 import Loader from 'components/Loader/Loader';
 
@@ -10,8 +10,7 @@ import {
   useParams,
   useLocation,
 } from 'react-router-dom';
-
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
@@ -63,7 +62,6 @@ export const MovieDetails = () => {
                 src={`https://image.tmdb.org/t/p/original${poster_path}`}
                 alt={tagline ? tagline : 'Movie photo'}
                 className={css.movieImg}
-                loading="lazy"
               />
             ) : (
               <p className={css.noPhoto}>No&nbsp;photo</p>
@@ -131,3 +129,4 @@ export const MovieDetails = () => {
     </>
   );
 };
+export default MovieDetails;

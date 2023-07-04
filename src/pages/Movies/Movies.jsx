@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import css from './Movies.module.css';
 import Api from 'components/Api';
 import Loader from 'components/Loader/Loader';
 
-export const Movies = ({ getMovieByQuery }) => {
+const Movies = ({ getMovieByQuery }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -57,15 +59,22 @@ export const Movies = ({ getMovieByQuery }) => {
           value={searchQuery}
           onChange={handleInputChange}
         />
-        {loading ? <div>Ładowanie...</div> : null}
-        {movies.length > 0 ? (
-          <ul>
-            {movies.map(movie => (
-              <li key={movie.id}>{movie.title}</li>
-            ))}
-          </ul>
-        ) : null}
       </form>
+      {movies.length > 0 && (
+        <ul>
+          {movies.map(({ id, title }) => (
+            <li key={id}>
+              <Link
+                to={`${id}`}
+                state={{ from: location }}
+                className={css.moviesTitle}
+              >
+                {title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
       <Loader setLoading={loading} />
     </>
   );
@@ -74,3 +83,5 @@ export const Movies = ({ getMovieByQuery }) => {
 Movies.propTypes = {
   getMovieByQuery: PropTypes.func.isRequired,
 };
+
+export default Movies;

@@ -7,13 +7,11 @@
   font-weight: 500;
   background-color: #c6cbd3;
   border: none;
-  border-radius: var(--border-radius);
   padding: 5px;
-  transition: background-color var(--duration) var(--timing-function);
 }
 
 .backLink {
-  color: var(--color-text-main);
+  color: grey;
 }
 
 .movie {
@@ -26,12 +24,10 @@
   width: 300px;
   height: 450px;
   background-color: rgba(0 0 0 / 0.2);
-  border-radius: var(--border-radius);
 }
 
 .noPhoto {
   font-size: 20px;
-  font-weight: var(--font-weight);
   width: 200px;
   display: flex;
   justify-content: center;
@@ -47,7 +43,7 @@
 
 .movieTitle {
   font-size: 26px;
-  font-weight: var(--font-weight);
+
   margin-bottom: 20px;
 }
 
@@ -87,8 +83,8 @@
 }
 
 .moreInfoBox {
-  border-top: 1px solid var(--color-text-sec);
-  border-bottom: 1px solid var(--color-text-sec);
+  border-top: 1px solid green;
+  border-bottom: 1px solid darkgreen;
   padding-block: 15px;
 }
 
@@ -107,7 +103,6 @@
 }
 
 .moreInfoLink {
-  color: var(--color-text-sec);
+  color: blue;
   text-decoration: underline;
-  transition: color var(--duration) var(--timing-function);
 }
