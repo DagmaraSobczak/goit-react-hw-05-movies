@@ -125,10 +125,9 @@ export const MovieDetails = () => {
           </ul>
         </div>
       )}
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader setLoading={loading} />}>
         <Outlet />
       </Suspense>
-      <Loader setLoading={loading} />
     </>
   );
 };
