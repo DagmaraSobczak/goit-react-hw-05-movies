@@ -36,7 +36,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      {!setLoading && (
+      {!loading && (
         <div className={css.backBtnBox}>
           <button type="button" className={css.backBtn}>
             <Link to={backLink.current} className={css.backLink}>
@@ -96,7 +96,7 @@ const MovieDetails = () => {
           </div>
         )
       )}
-      {!setLoading && (
+      {!loading && (
         <div className={css.moreInfoBox}>
           <p className={css.moreInfo}>Additional information</p>
           <ul className={css.moreInfoList}>
@@ -104,7 +104,7 @@ const MovieDetails = () => {
               <NavLink
                 to="cast"
                 className={({ isActive }) =>
-                  isActive ? (css.moreInfoLink, css.isActive) : css.moreInfoLink
+                  isActive ? (css.styledLink, css.isActive) : css.styledLink
                 }
               >
                 Cast
@@ -114,7 +114,7 @@ const MovieDetails = () => {
               <NavLink
                 to="reviews"
                 className={({ isActive }) =>
-                  isActive ? (css.moreInfoLink, css.isActive) : css.moreInfoLink
+                  isActive ? (css.styledLink, css.isActive) : css.styledLink
                 }
               >
                 Reviews

@@ -9,6 +9,7 @@
 .castItem {
   width: 200px;
   position: relative;
+  list-style-type: none;
 }
 
 .castImg {

@@ -5,7 +5,7 @@
 .backBtn {
   width: 80px;
   font-weight: 500;
-  background-color: #c6cbd3;
+  background-color: #e0c0a3;
   border: none;
   padding: 5px;
 }
@@ -102,7 +102,9 @@
   margin-bottom: 5px;
 }
 
-.moreInfoLink {
-  color: blue;
-  text-decoration: underline;
+.styledLink {
+  color: black;
+}
+.isActive {
+  color: orange;
 }
