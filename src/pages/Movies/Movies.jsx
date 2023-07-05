@@ -75,7 +75,7 @@ const Movies = ({ getMovieByQuery }) => {
           ))}
         </ul>
       )}
-      <Loader setLoading={loading} />
+      {loading && <Loader />}
     </>
   );
 };
